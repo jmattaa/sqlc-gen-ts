@@ -7,6 +7,7 @@ import {
   deleteAuthor,
   getAuthor,
   listAuthors,
+  updateAuthor,
 } from "./db/query_sql";
 
 interface Author {
@@ -38,6 +39,15 @@ async function main() {
     throw new Error("seal not found");
   }
   console.log(seal);
+
+  // Update the author
+  await updateAuthor(database, {
+    name: "Nah it's me",
+    bio: "Kissed from a rose",
+    id: seal.id,
+  });
+  const authors2 = await listAuthors(database);
+  console.log(authors2);
 
   // Delete the author
   await deleteAuthor(database, { id: seal.id });

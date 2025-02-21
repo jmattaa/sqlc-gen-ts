@@ -13,6 +13,12 @@ INSERT INTO authors (
   ?, ?
 );
 
+-- name: UpdateAuthor :one
+UPDATE authors
+SET name = ?, bio = ?
+WHERE id = ?
+RETURNING *;
+
 -- name: DeleteAuthor :exec
 DELETE FROM authors
 WHERE id = ?;
