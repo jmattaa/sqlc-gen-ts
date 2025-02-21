@@ -8,9 +8,9 @@ ORDER BY name;
 
 -- name: CreateAuthor :exec
 INSERT INTO authors (
-  name, bio
+  name, bio, some_ting
 ) VALUES (
-  ?, ?
+  ?, ?, ?
 );
 
 -- name: UpdateAuthor :one

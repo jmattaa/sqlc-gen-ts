@@ -3,7 +3,7 @@
 import { Database } from "better-sqlite3";
 
 export const getAuthorQuery = `-- name: GetAuthor :one
-SELECT id, name, bio FROM authors
+SELECT id, name, some_ting, bio FROM authors
 WHERE id = ? LIMIT 1`;
 
 export interface GetAuthorArgs {
@@ -13,6 +13,7 @@ export interface GetAuthorArgs {
 export interface GetAuthorRow {
     id: any;
     name: any;
+    someTing: any | null;
     bio: any | null;
 }
 
@@ -26,12 +27,13 @@ export async function getAuthor(database: Database, args: GetAuthorArgs): Promis
 }
 
 export const listAuthorsQuery = `-- name: ListAuthors :many
-SELECT id, name, bio FROM authors
+SELECT id, name, some_ting, bio FROM authors
 ORDER BY name`;
 
 export interface ListAuthorsRow {
     id: any;
     name: any;
+    someTing: any | null;
     bio: any | null;
 }
 
@@ -43,26 +45,27 @@ export async function listAuthors(database: Database): Promise<ListAuthorsRow[]>
 
 export const createAuthorQuery = `-- name: CreateAuthor :exec
 INSERT INTO authors (
-  name, bio
+  name, bio, some_ting
 ) VALUES (
-  ?, ?
+  ?, ?, ?
 )`;
 
 export interface CreateAuthorArgs {
     name: any;
     bio: any | null;
+    someTing: any | null;
 }
 
 export async function createAuthor(database: Database, args: CreateAuthorArgs): Promise<void> {
     const stmt = database.prepare(createAuthorQuery);
-    await stmt.run(args.name, args.bio);
+    await stmt.run(args.name, args.bio, args.someTing);
 }
 
 export const updateAuthorQuery = `-- name: UpdateAuthor :one
 UPDATE authors
 SET name = ?, bio = ?
 WHERE id = ?
-RETURNING id, name, bio`;
+RETURNING id, name, some_ting, bio`;
 
 export interface UpdateAuthorArgs {
     name: any;
@@ -73,6 +76,7 @@ export interface UpdateAuthorArgs {
 export interface UpdateAuthorRow {
     id: any;
     name: any;
+    someTing: any | null;
     bio: any | null;
 }
 

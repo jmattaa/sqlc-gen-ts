@@ -27,6 +27,7 @@ async function main() {
   await createAuthor(database, {
     name: "Seal",
     bio: "Kissed from a rose",
+    someTing: 69,
   });
 
   // List the authors
