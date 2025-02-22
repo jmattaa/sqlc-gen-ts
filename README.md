@@ -15,7 +15,7 @@ If you want to build and test sqlc-gen-typescript locally, follow these steps:
 
 1. Clone the repository and install dependencies:
    ```
-   git clone https://github.com/jmattaa/sqlc-gen-typescript.git
+   git clone https://github.com/jmattaa/sqlc-ts-sqlite.git
    cd sqlc-gen-typescript
    npm install
    ```
