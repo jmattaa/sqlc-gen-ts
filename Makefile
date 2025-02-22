@@ -1,8 +1,5 @@
 .PHONY: generate
 
-generate: examples/plugin.wasm examples/sqlc.dev.yaml
-	cd examples && sqlc-dev -f sqlc.dev.yaml generate
-
 examples/plugin.wasm: out.js
 	javy compile out.js -o examples/plugin.wasm
 

@@ -426,10 +426,10 @@ export class Driver {
   }
 
   execlastidDecl(
-    funcName: string,
-    queryName: string,
-    argIface: string | undefined,
-    params: Parameter[]
+    _funcName: string,
+    _queryName: string,
+    _argIface: string | undefined,
+    _params: Parameter[]
   ): FunctionDeclaration {
     throw new Error(
       "better-sqlite3 driver currently does not support :execlastid"
