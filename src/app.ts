@@ -254,14 +254,14 @@ function rowDecl(
         factory.createIdentifier(name),
         undefined,
         undefined,
-        columns.map((column, i) =>
-            factory.createPropertySignature(
+        columns.map((column, i) => {
+            return factory.createPropertySignature(
                 undefined,
                 factory.createIdentifier(colName(i, column)),
                 undefined,
                 driver.columnType(column)
             )
-        )
+        })
     );
 }
 

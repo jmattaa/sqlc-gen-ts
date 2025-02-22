@@ -3,7 +3,7 @@ plugins:
 - name: ts
   wasm:
     url: file://plugin.wasm
-    sha256: 67bc29fb8c03b35ce3340e0ee29a8ef8a0c5e4fa3dbfcd19be8658e4aace7201
+    sha256: 92a14e898322ef2a4806fa58c47dc81bd7dcb25827736da2b6b6ae434ef64d60
 sql:
 - schema: "authors/sqlite/schema.sql"
   queries: "authors/sqlite/query.sql"
