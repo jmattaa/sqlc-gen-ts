@@ -3,3 +3,5 @@ out.js
 *.wasm
 javy
 tests
+
+.DS_Store
