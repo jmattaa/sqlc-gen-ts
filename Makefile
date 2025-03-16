@@ -1,7 +1,7 @@
 .PHONY: generate
 
 examples/plugin.wasm: out.js
-	javy compile out.js -o examples/plugin.wasm
+	javy build out.js -o examples/plugin.wasm
 
 out.js: src/app.ts $(wildcard src/drivers/*.ts) src/gen/plugin/codegen_pb.ts
 	npx tsc --noEmit

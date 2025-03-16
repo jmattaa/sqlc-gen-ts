@@ -4,6 +4,8 @@
 > This project is not finished on [sqlc-gen-typescript](https://github.com/sqlc-dev/sqlc-gen-typescript)
 > Here i'm just tweaking it for my sqlite usage
 
+> [!IMPORTANT]
+> USE JAVY 3.2.0 and nothing greater cuz protobuf be complaining
 
 ## Supported engines and drivers
 
