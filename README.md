@@ -9,6 +9,7 @@
 
 ## Supported engines and drivers
 
+- PostgreSQL via [postgres](https://www.npmjs.com/package/postgres)
 - SQLite via [sqlite3](https://www.npmjs.com/package/better-sqlite3).
 
 ## Development

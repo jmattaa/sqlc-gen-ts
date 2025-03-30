@@ -28,6 +28,7 @@ import {
 
 import { argName, colName } from "./drivers/utlis";
 import { Driver as Sqlite3Driver } from "./drivers/better-sqlite3";
+import { Driver as PostgresDriver } from "./drivers/postgres";
 
 // Read input from stdin
 const input = readInput();
@@ -78,6 +79,9 @@ function createNodeGenerator(options: Options): Driver {
     switch (options.driver) {
         case "better-sqlite3": {
             return new Sqlite3Driver();
+        }
+        case "postgres": {
+            return new PostgresDriver();
         }
     }
     throw new Error(`Unknown driver: ${options.driver}\nThis only supports better-sqlite3`);
