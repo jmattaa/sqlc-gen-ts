@@ -1,4 +1,4 @@
-# sqlc-ts-sqlite
+# sqlc-gen-ts
 
 > [!CAUTION]
 > This project is not finished on [sqlc-gen-typescript](https://github.com/sqlc-dev/sqlc-gen-typescript)
